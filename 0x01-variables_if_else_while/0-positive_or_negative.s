@@ -2,11 +2,11 @@
 	.text
 	.section	.rodata
 .LC0:
-	.string	"is positive %d\n"
+	.string	"\nis positive %d"
 .LC1:
-	.string	"is zero %d\n"
+	.string	"\nis zero %d"
 .LC2:
-	.string	"is negative %d\n"
+	.string	"\nis negative %d"
 	.text
 	.globl	main
 	.type	main, @function
@@ -30,9 +30,8 @@ main:
 	cmpl	$0, -4(%rbp)
 	jle	.L2
 	movl	-4(%rbp), %eax
-	cltq
-	leaq	.LC0(%rip), %rsi
-	movq	%rax, %rdi
+	movl	%eax, %esi
+	leaq	.LC0(%rip), %rdi
 	movl	$0, %eax
 	call	printf@PLT
 	jmp	.L3
@@ -40,17 +39,15 @@ main:
 	cmpl	$0, -4(%rbp)
 	jne	.L4
 	movl	-4(%rbp), %eax
-	cltq
-	leaq	.LC1(%rip), %rsi
-	movq	%rax, %rdi
+	movl	%eax, %esi
+	leaq	.LC1(%rip), %rdi
 	movl	$0, %eax
 	call	printf@PLT
 	jmp	.L3
 .L4:
 	movl	-4(%rbp), %eax
-	cltq
-	leaq	.LC2(%rip), %rsi
-	movq	%rax, %rdi
+	movl	%eax, %esi
+	leaq	.LC2(%rip), %rdi
 	movl	$0, %eax
 	call	printf@PLT
 .L3:
