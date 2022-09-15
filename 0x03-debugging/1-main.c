@@ -1,18 +1,17 @@
 #include <stdio.h>
 
 /**
- * mian - causes an infinite loop
- *
- * Return: 0.
+ * main - causes an infinite loop
+ * Return: 0
  */
 
 int main(void)
 {
-	int n;
+	int i;
 
 	printf("Infinite loop incoming :(\n");
 
-	n = 0;
+	i = 0;
 
 	/*while (i < 10)*/
 	/*{*/
