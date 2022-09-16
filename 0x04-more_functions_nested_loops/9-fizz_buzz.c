@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include "main.h"
 
 /**
  * main - prints the numbers from 1 to 100.
@@ -34,6 +32,6 @@ int main(void)
 			printf(" %d", n);
 		}
 	}
-	_putchar('\n');
+	printf("\n");
 	return (0);
 }
