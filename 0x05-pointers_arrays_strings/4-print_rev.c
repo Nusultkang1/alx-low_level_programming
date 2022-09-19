@@ -11,4 +11,20 @@
 
 void print_rev(char *s)
 {
+	int n, m, str;
 
+	n = 0;
+
+	while (*(s + n) != '\0')
+	{
+		n++;
+	}
+
+	str = n;
+
+	for (m = str - n; m >= 0; m--)
+	{
+		_putchar(*(s + n));
+	}
+	_putchar('\n');
+}
