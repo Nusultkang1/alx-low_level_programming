@@ -13,7 +13,7 @@ void print_rev(char *s)
 
 	n = 0;
 
-	while (*(s + n) != '\0')
+	while (s[n] != '\0')
 	{
 		n++;
 	}
@@ -22,7 +22,7 @@ void print_rev(char *s)
 
 	for (m = str - n; m >= 0; m--)
 	{
-		_putchar(*(s + m));
+		_putchar(s[m]);
 	}
 	_putchar('\n');
 }
