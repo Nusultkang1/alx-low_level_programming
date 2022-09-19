@@ -12,5 +12,11 @@
 
 int _strlen(char *s)
 {
-	printf("%zu", strlen(*s));
+	int i;
+	*s = s[i];
+
+	for (i = 0; i != '\0'; i++)
+	{
+		printf("%d", i);
+	}
 }
