@@ -13,11 +13,10 @@
 int _strlen(char *s)
 {
 	int i;
-	*s = s[i];
 
-	for (i = 0; s[i] != '\0'; ++i)
+	while (*(s + i) != '\n')
 	{
-		printf("%d", i);
-		return (0);
+		i++;
 	}
+	return (i);
 }
