@@ -16,19 +16,21 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	if ((dest == NULL) && (src == NULL))
+	int len;
+
+	len = 0;
+
+	while (src[len] != '\0' && i < n)
 	{
-		return (NULL);
+		dest[len] = src[len];
+		len++;
 	}
 
-	while (*src && n--)
+	while (len < n)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[len] = '\0';
+		len++;
 	}
-
-	*dest = '\0';
 
 	return (dest);
 }
