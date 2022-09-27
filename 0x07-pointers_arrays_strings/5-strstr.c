@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * strstr - prints the first occurrence of the substring.
+ * _strstr - prints the first occurrence of the substring.
  * @haystack: entire string
  * @needle: substring
  * Return: pointer to the beginning of located substring
