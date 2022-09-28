@@ -9,12 +9,13 @@
 
 void _puts_recursion(char *s)
 {
-	int n;
-
-	if (!(s[n] >= 'a') && !(s[n] <= 'z'))
+	if (*s != '\0')
 	{
-		return (0);
+		_putchar(*s);
+		_puts_recursion(s + 1);
 	}
-	n++;
-	return (_puts_recursion(s + 1));
+	else
+	{
+		_putchar('\n');
+	}
 }
