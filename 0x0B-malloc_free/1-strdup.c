@@ -14,26 +14,30 @@
 
 char *_strdup(char *str)
 {
-	unsigned int size;
-	int i;
-	str = (char *) malloc(sizeof(char) * size);
+	char *duplicate;
+	unsigned int i = len = 0;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	if (size > sizeof(str))
+	while (str[len])
+	{
+		len++;
+	}
+
+	duplicate = malloc(sizeof(char) * (len + 1));
+
+	if (duplicate == NULL)
 	{
 		return (NULL);
 	}
-
-	while (i < size)
+	
+	while ((duplicate[i] = str[i]) != '\0')
 	{
-		char *ptr = str[i];
 		i++;
 	}
-	str[i] = '\0';
-	return (ptr);
-	free(str);
+	duplicate[i] = '\0';
+	return (duplicate);
 }
