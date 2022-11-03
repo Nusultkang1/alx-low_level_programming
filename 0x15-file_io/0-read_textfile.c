@@ -1,9 +1,10 @@
+#include <stddef.h>
+#include "main.h"
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "main.h"
-#include <stdio.h>
 
 /**
  * read_textfile - reads a text file and print it to the POSIX
@@ -19,7 +20,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t fd, wrt, rd;
+	ssize_t fd, wrt, rd;
 	char *buf;
 
 	if (filename == NULL)
@@ -31,9 +32,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = open(filename, O_RDONLY);
 	rd = read(fd, buf, letters);
-	wrt = write(STDOUT_FILENO, buf, r);
+	wrt = write(STDOUT_FILENO, buf, rd);
 
-	if (fd == -1 || rd == -1 || wrt == -1 || w != r)
+	if (fd == -1 || rd == -1 || wrt == -1 || wrt != rd)
 	{
 		free(buf);
 		return (0);
